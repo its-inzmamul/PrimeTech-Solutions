@@ -1,0 +1,146 @@
+/* ==========================================================
+   PrimeTech Solutions
+   footer.css
+   Premium Footer v1.0
+   ========================================================== */
+
+footer{
+    position:relative;
+    background:linear-gradient(180deg,#111,#090909);
+    border-top:1px solid var(--glass-border);
+    padding:70px 0 25px;
+    overflow:hidden;
+}
+
+footer::before{
+    content:"";
+    position:absolute;
+    inset:auto -10% 85% -10%;
+    height:220px;
+    background:radial-gradient(circle,rgba(255,138,0,.14),transparent 70%);
+    pointer-events:none;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1.3fr 1.2fr;
+    gap:2.5rem;
+    margin-bottom:3rem;
+}
+
+.footer-grid h3{
+    margin-bottom:1rem;
+    font-size:1.1rem;
+}
+
+.footer-grid p,
+.footer-grid li,
+.footer-grid a{
+    color:var(--text-muted);
+    font-size:.95rem;
+    margin-bottom:.75rem;
+}
+
+.footer-grid a:hover{
+    color:var(--color-primary);
+}
+
+.footer-logo{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-bottom:1rem;
+}
+
+.footer-logo img{
+    width:64px;
+    height:64px;
+}
+
+.footer-tagline{
+    max-width:340px;
+}
+
+.footer-links,
+.footer-contact,
+.footer-hours{
+    list-style:none;
+}
+
+.footer-links li,
+.footer-contact li,
+.footer-hours li{
+    margin-bottom:.8rem;
+}
+
+.social-icons{
+    display:flex;
+    gap:.8rem;
+    margin-top:1.4rem;
+    flex-wrap:wrap;
+}
+
+.social-icons a{
+    width:46px;
+    height:46px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:var(--glass-bg);
+    border:1px solid var(--glass-border);
+    transition:all var(--transition);
+}
+
+.social-icons a:hover{
+    background:var(--gradient-primary);
+    color:#fff;
+    transform:translateY(-4px);
+    box-shadow:var(--shadow-glow);
+}
+
+.footer-divider{
+    height:1px;
+    background:var(--border);
+    margin:1.5rem 0;
+}
+
+.footer-bottom{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:1rem;
+    color:var(--text-light);
+    font-size:.9rem;
+}
+
+.footer-bottom a{
+    color:var(--color-primary);
+}
+
+.footer-bottom a:hover{
+    text-decoration:underline;
+}
+
+@media(max-width:992px){
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+    .footer-bottom{
+        flex-direction:column;
+        text-align:center;
+    }
+}
+
+@media(max-width:576px){
+    footer{
+        padding-top:55px;
+    }
+    .footer-grid{
+        grid-template-columns:1fr;
+        gap:2rem;
+    }
+    .social-icons{
+        justify-content:flex-start;
+    }
+}
