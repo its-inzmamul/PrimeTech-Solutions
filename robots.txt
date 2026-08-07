@@ -1,0 +1,15 @@
+# ==========================================================
+# PrimeTech Solutions
+# robots.txt
+# ==========================================================
+
+User-agent: *
+Allow: /
+
+# Block common system folders (future use)
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /private/
+
+# Sitemap
+Sitemap: https://YOUR_GITHUB_USERNAME.github.io/PrimeTech-Solutions/sitemap.xml
