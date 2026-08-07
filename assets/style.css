@@ -13,8 +13,10 @@
 
 /* Components */
 @import url("buttons.css");
+@import url("cards.css");
 @import url("navbar.css");
 @import url("hero.css");
+@import url("forms.css");
 @import url("about.css");
 @import url("services.css");
 @import url("primecare.css");
