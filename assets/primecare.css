@@ -1,0 +1,169 @@
+/* ==========================================================
+   PrimeTech Solutions
+   primecare.css
+   PrimeCare Protection Styles v1.0
+   ========================================================== */
+
+/* Section */
+.primecare{
+    position:relative;
+    overflow:hidden;
+}
+
+.primecare::before{
+    content:"";
+    position:absolute;
+    top:-180px;
+    right:-180px;
+    width:520px;
+    height:520px;
+    border-radius:50%;
+    background:radial-gradient(circle,rgba(255,138,0,.12),transparent 70%);
+    pointer-events:none;
+}
+
+/* Pricing Grid */
+.primecare-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:var(--card-gap);
+}
+
+/* Plan Card */
+.plan-card{
+    display:flex;
+    flex-direction:column;
+    position:relative;
+}
+
+.plan-card .price{
+    font-family:var(--font-heading);
+    font-size:2.6rem;
+    font-weight:800;
+    color:var(--color-primary);
+    margin:.5rem 0;
+}
+
+.plan-card .price span{
+    font-size:1rem;
+    color:var(--text-light);
+    font-weight:500;
+}
+
+.plan-card h3{
+    margin-bottom:.4rem;
+}
+
+.plan-card p{
+    margin-bottom:1.25rem;
+}
+
+/* Popular Ribbon */
+.popular-ribbon{
+    position:absolute;
+    top:18px;
+    right:-36px;
+    transform:rotate(45deg);
+    background:var(--gradient-primary);
+    color:#fff;
+    padding:8px 42px;
+    font-size:.75rem;
+    font-weight:700;
+    letter-spacing:.08em;
+    box-shadow:var(--shadow-md);
+}
+
+/* Included / Excluded */
+.plan-section{
+    margin-top:1.2rem;
+}
+
+.plan-section h4{
+    margin-bottom:.75rem;
+}
+
+.include-list li,
+.exclude-list li{
+    display:flex;
+    gap:.7rem;
+    margin-bottom:.8rem;
+    color:var(--text-muted);
+}
+
+.include-list li::before{
+    content:"✔";
+    color:var(--success);
+    font-weight:700;
+}
+
+.exclude-list li::before{
+    content:"✖";
+    color:var(--danger);
+    font-weight:700;
+}
+
+/* Fair Usage Note */
+.fair-usage{
+    margin-top:1.5rem;
+    padding:1rem 1.2rem;
+    border-left:4px solid var(--warning);
+    background:rgba(245,158,11,.08);
+    border-radius:0 var(--radius-md) var(--radius-md) 0;
+    color:var(--text-muted);
+}
+
+/* Business Plan */
+.business-plan{
+    margin-top:4rem;
+    padding:2.5rem;
+    border-radius:var(--radius-lg);
+    background:linear-gradient(135deg,rgba(255,138,0,.12),rgba(255,255,255,.03));
+    border:1px solid var(--glass-border);
+}
+
+.business-plan ul{
+    margin-top:1.5rem;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:1rem;
+}
+
+.business-plan li::before{
+    content:"★";
+    color:var(--color-primary);
+    margin-right:.5rem;
+}
+
+/* Terms */
+.terms-box{
+    margin-top:3rem;
+    padding:2rem;
+    background:var(--glass-bg);
+    border:1px solid var(--glass-border);
+    border-radius:var(--radius-lg);
+}
+
+.terms-box li{
+    margin-bottom:.8rem;
+}
+
+/* Responsive */
+@media(max-width:768px){
+    .business-plan ul{
+        grid-template-columns:1fr;
+    }
+    .popular-ribbon{
+        right:-42px;
+        font-size:.68rem;
+    }
+}
+
+@media(max-width:576px){
+    .plan-card .price{
+        font-size:2.2rem;
+    }
+    .business-plan,
+    .terms-box{
+        padding:1.5rem;
+    }
+}

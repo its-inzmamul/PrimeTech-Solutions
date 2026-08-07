@@ -1,0 +1,201 @@
+/* ==========================================================
+   PrimeTech Solutions
+   services.css
+   Services Section v1.0
+   ========================================================== */
+
+/* =========================
+   Section
+========================= */
+
+.services,
+.service-page{
+    position:relative;
+    overflow:hidden;
+}
+
+.services::before,
+.service-page::before{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    left:-180px;
+    bottom:-220px;
+    border-radius:50%;
+    background:radial-gradient(circle,
+        rgba(255,138,0,.10),
+        transparent 70%);
+    pointer-events:none;
+}
+
+/* =========================
+   Grid
+========================= */
+
+.services-grid,
+.service-layout{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:var(--card-gap);
+}
+
+/* =========================
+   Cards
+========================= */
+
+.service-card,
+.service-large-card{
+    position:relative;
+    background:var(--glass-bg);
+    border:1px solid var(--glass-border);
+    backdrop-filter:blur(var(--glass-blur));
+    border-radius:var(--radius-lg);
+    padding:2rem;
+    overflow:hidden;
+}
+
+.service-large-card::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(180deg,
+        rgba(255,138,0,.05),
+        transparent 35%);
+    pointer-events:none;
+}
+
+.service-card .icon,
+.service-large-card .icon{
+    width:68px;
+    height:68px;
+    border-radius:18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:var(--gradient-primary);
+    color:#fff;
+    font-size:1.5rem;
+    margin-bottom:1.5rem;
+    box-shadow:var(--shadow-glow);
+}
+
+.service-card h3,
+.service-large-card h2{
+    margin-bottom:.8rem;
+}
+
+.service-card p,
+.service-large-card p{
+    margin-bottom:1.25rem;
+}
+
+/* =========================
+   Feature List
+========================= */
+
+.service-large-card ul{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:.8rem 1.2rem;
+    margin:1.5rem 0 2rem;
+}
+
+.service-large-card li{
+    display:flex;
+    align-items:flex-start;
+    gap:.6rem;
+    color:var(--text-muted);
+}
+
+.service-large-card li::before{
+    content:"✓";
+    color:var(--color-primary);
+    font-weight:700;
+}
+
+/* =========================
+   Problem Box
+========================= */
+
+.problem-box{
+    margin-top:2rem;
+    padding:1.5rem;
+    border-radius:var(--radius-md);
+    background:rgba(255,138,0,.06);
+    border:1px dashed rgba(255,138,0,.25);
+}
+
+.problem-box h4{
+    margin-bottom:1rem;
+}
+
+.problem-box ul{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:.75rem;
+}
+
+.problem-box li::before{
+    content:"✦";
+    color:var(--color-primary);
+    margin-right:.45rem;
+}
+
+/* =========================
+   CTA Strip
+========================= */
+
+.service-cta{
+    margin-top:4rem;
+    padding:2rem;
+    border-radius:var(--radius-lg);
+    background:linear-gradient(135deg,
+        rgba(255,138,0,.16),
+        rgba(255,255,255,.04));
+    border:1px solid var(--glass-border);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:2rem;
+}
+
+.service-cta h3{
+    margin:0 0 .5rem;
+}
+
+.service-cta p{
+    margin:0;
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media(max-width:768px){
+
+    .service-large-card ul,
+    .problem-box ul{
+        grid-template-columns:1fr;
+    }
+
+    .service-cta{
+        flex-direction:column;
+        text-align:center;
+    }
+}
+
+@media(max-width:576px){
+
+    .service-card,
+    .service-large-card{
+        padding:1.5rem;
+    }
+
+    .service-card .icon,
+    .service-large-card .icon{
+        width:60px;
+        height:60px;
+        font-size:1.3rem;
+    }
+}
