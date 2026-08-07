@@ -12,4 +12,4 @@ Disallow: /tmp/
 Disallow: /private/
 
 # Sitemap
-Sitemap: https://YOUR_GITHUB_USERNAME.github.io/PrimeTech-Solutions/sitemap.xml
+Sitemap: https://its-inzmamul.github.io/PrimeTech-Solutions/sitemap.xml
