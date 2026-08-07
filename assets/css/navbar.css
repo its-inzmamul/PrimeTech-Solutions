@@ -135,7 +135,13 @@ header{
         display:flex;
     }
 
-    .nav-btn{
+   .nav-actions{
+        display:flex;
+        align-items:center;
+        gap:12px;
+   }
+
+    .nav-actions .nav-call{
         display:none;
     }
 
