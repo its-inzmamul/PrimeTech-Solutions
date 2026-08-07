@@ -1,0 +1,195 @@
+/* ==========================================================
+   PrimeTech Solutions
+   animations.css
+   Premium Animation System v1.0
+   ========================================================== */
+
+/* ---------- Global Transitions ---------- */
+
+*{
+    transition:
+        background-color var(--transition),
+        border-color var(--transition),
+        color var(--transition),
+        box-shadow var(--transition),
+        transform var(--transition);
+}
+
+/* ---------- Fade Utilities ---------- */
+
+.fade-up{
+    animation:fadeUp .8s ease both;
+}
+
+.fade-down{
+    animation:fadeDown .8s ease both;
+}
+
+.fade-left{
+    animation:fadeLeft .8s ease both;
+}
+
+.fade-right{
+    animation:fadeRight .8s ease both;
+}
+
+@keyframes fadeUp{
+    from{opacity:0;transform:translateY(35px);}
+    to{opacity:1;transform:none;}
+}
+
+@keyframes fadeDown{
+    from{opacity:0;transform:translateY(-35px);}
+    to{opacity:1;transform:none;}
+}
+
+@keyframes fadeLeft{
+    from{opacity:0;transform:translateX(-35px);}
+    to{opacity:1;transform:none;}
+}
+
+@keyframes fadeRight{
+    from{opacity:0;transform:translateX(35px);}
+    to{opacity:1;transform:none;}
+}
+
+/* ---------- Floating ---------- */
+
+.float{
+    animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-10px);}
+}
+
+/* ---------- Pulse ---------- */
+
+.pulse{
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(255,138,0,.45);}
+    70%{box-shadow:0 0 0 18px rgba(255,138,0,0);}
+    100%{box-shadow:0 0 0 0 rgba(255,138,0,0);}
+}
+
+/* ---------- Hero Glow ---------- */
+
+.hero-glow{
+    animation:heroGlow 5s ease-in-out infinite alternate;
+}
+
+@keyframes heroGlow{
+    from{filter:drop-shadow(0 0 10px rgba(255,138,0,.25));}
+    to{filter:drop-shadow(0 0 28px rgba(255,138,0,.55));}
+}
+
+/* ---------- Card Hover ---------- */
+
+.service-card,
+.plan-card,
+.contact-card,
+.business-box,
+.feature-box,
+.stat-card{
+    will-change:transform;
+}
+
+.service-card:hover,
+.plan-card:hover,
+.contact-card:hover,
+.business-box:hover,
+.feature-box:hover,
+.stat-card:hover{
+    transform:translateY(-8px) scale(1.01);
+}
+
+/* ---------- Icon Rotate ---------- */
+
+.service-card i,
+.feature-box i,
+.business-box i{
+    transition:transform .4s ease;
+}
+
+.service-card:hover i,
+.feature-box:hover i,
+.business-box:hover i{
+    transform:rotate(8deg) scale(1.08);
+}
+
+/* ---------- Image Zoom ---------- */
+
+.gallery-grid{
+    overflow:hidden;
+}
+
+.gallery-grid img{
+    transition:transform .6s ease;
+}
+
+.gallery-grid img:hover{
+    transform:scale(1.05);
+}
+
+/* ---------- Button Active ---------- */
+
+.btn:active,
+.btn-primary:active,
+.btn-secondary:active,
+.nav-btn:active,
+.plan-btn:active{
+    transform:scale(.97);
+}
+
+/* ---------- Loading Spinner ---------- */
+
+.loader-circle{
+    width:72px;
+    height:72px;
+    border-radius:50%;
+    border:4px solid rgba(255,255,255,.12);
+    border-top-color:var(--color-primary);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    animation:spin 1s linear infinite;
+}
+
+.loader-circle span{
+    animation:none;
+    font-weight:700;
+}
+
+@keyframes spin{
+    to{transform:rotate(360deg);}
+}
+
+/* ---------- Scroll Reveal ---------- */
+
+.reveal{
+    opacity:0;
+    transform:translateY(40px);
+}
+
+.reveal.active{
+    opacity:1;
+    transform:none;
+    transition:all .8s ease;
+}
+
+/* ---------- Accessibility ---------- */
+
+@media (prefers-reduced-motion: reduce){
+
+    *,
+    *::before,
+    *::after{
+        animation:none !important;
+        transition:none !important;
+        scroll-behavior:auto !important;
+    }
+}

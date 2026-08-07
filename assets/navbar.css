@@ -1,0 +1,183 @@
+/* ==========================================================
+   PrimeTech Solutions
+   navbar.css
+   Premium Navigation v1.0
+   ========================================================== */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:var(--z-navbar);
+    transition:var(--transition);
+}
+
+.navbar{
+    min-height:var(--navbar-height);
+    backdrop-filter:blur(18px);
+    background:rgba(11,11,11,.72);
+    border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.navbar.scrolled{
+    background:rgba(8,8,8,.92);
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+
+.navbar .container{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    min-height:var(--navbar-height);
+    gap:2rem;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    flex-shrink:0;
+}
+
+.logo img{
+    width:56px;
+    height:56px;
+    object-fit:contain;
+}
+
+.logo h2{
+    margin:0;
+    font-size:1.2rem;
+    color:#fff;
+    line-height:1;
+}
+
+.logo span{
+    color:var(--color-primary);
+    font-size:.88rem;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:2rem;
+}
+
+.nav-links a{
+    position:relative;
+    color:var(--text-muted);
+    font-weight:500;
+    padding:.35rem 0;
+}
+
+.nav-links a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0;
+    height:2px;
+    background:var(--gradient-primary);
+    transition:var(--transition);
+    border-radius:99px;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+    color:#fff;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after{
+    width:100%;
+}
+
+.menu-btn{
+    display:none;
+    width:46px;
+    height:46px;
+    border:1px solid var(--glass-border);
+    border-radius:var(--radius-md);
+    background:var(--glass-bg);
+    cursor:pointer;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    gap:5px;
+}
+
+.menu-btn span{
+    width:22px;
+    height:2px;
+    background:#fff;
+    transition:var(--transition);
+    border-radius:99px;
+}
+
+.menu-btn.active span:nth-child(1){
+    transform:translateY(7px) rotate(45deg);
+}
+.menu-btn.active span:nth-child(2){
+    opacity:0;
+}
+.menu-btn.active span:nth-child(3){
+    transform:translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile */
+
+@media(max-width:992px){
+
+    .menu-btn{
+        display:flex;
+    }
+
+    .nav-btn{
+        display:none;
+    }
+
+    .nav-links{
+        position:fixed;
+        top:var(--navbar-height);
+        right:-100%;
+        width:min(320px,88vw);
+        height:calc(100vh - var(--navbar-height));
+        background:rgba(10,10,10,.96);
+        backdrop-filter:blur(20px);
+        border-left:1px solid var(--glass-border);
+        display:flex;
+        flex-direction:column;
+        align-items:flex-start;
+        padding:2rem;
+        gap:1.5rem;
+        transition:right .35s ease;
+    }
+
+    .nav-links.active{
+        right:0;
+    }
+
+    .nav-links a{
+        width:100%;
+        font-size:1.05rem;
+    }
+}
+
+@media(max-width:576px){
+
+    .logo img{
+        width:48px;
+        height:48px;
+    }
+
+    .logo h2{
+        font-size:1.05rem;
+    }
+
+    .logo span{
+        font-size:.78rem;
+    }
+}
