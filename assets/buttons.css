@@ -1,0 +1,173 @@
+/* ==========================================================
+   PrimeTech Solutions
+   buttons.css
+   Premium Button System v1.0
+   ========================================================== */
+
+/* Base Button */
+
+.btn,
+.btn-primary,
+.btn-secondary,
+.nav-btn,
+.plan-btn,
+.service-btn,
+.action-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:.65rem;
+    min-height:var(--btn-height);
+    padding:var(--btn-padding);
+    border-radius:var(--radius-pill);
+    font-family:var(--font-heading);
+    font-weight:600;
+    cursor:pointer;
+    transition:all var(--transition);
+    position:relative;
+    overflow:hidden;
+    white-space:nowrap;
+}
+
+/* Shine effect */
+
+.btn::before,
+.btn-primary::before,
+.btn-secondary::before,
+.nav-btn::before,
+.plan-btn::before,
+.service-btn::before,
+.action-btn::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    transform:translateX(-120%) skewX(-20deg);
+    background:linear-gradient(90deg,
+        transparent,
+        rgba(255,255,255,.25),
+        transparent);
+    transition:transform .7s ease;
+}
+
+.btn:hover::before,
+.btn-primary:hover::before,
+.btn-secondary:hover::before,
+.nav-btn:hover::before,
+.plan-btn:hover::before,
+.service-btn:hover::before,
+.action-btn:hover::before{
+    transform:translateX(140%) skewX(-20deg);
+}
+
+/* Primary */
+
+.btn-primary,
+.nav-btn,
+.plan-btn{
+    background:var(--gradient-primary);
+    color:#fff;
+    box-shadow:var(--shadow-sm);
+}
+
+.btn-primary:hover,
+.nav-btn:hover,
+.plan-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:var(--shadow-glow);
+    color:#fff;
+}
+
+/* Secondary */
+
+.btn-secondary,
+.service-btn{
+    border:1px solid var(--glass-border);
+    background:var(--glass-bg);
+    color:var(--text);
+    backdrop-filter:blur(var(--glass-blur));
+}
+
+.btn-secondary:hover,
+.service-btn:hover{
+    border-color:var(--color-primary);
+    color:var(--color-primary);
+    transform:translateY(-3px);
+}
+
+/* Icon Button */
+
+.action-btn{
+    width:100%;
+    border-radius:var(--radius-md);
+    background:var(--bg-card);
+    border:1px solid var(--border);
+    color:var(--text);
+}
+
+.action-btn:hover{
+    background:var(--bg-card-hover);
+    border-color:var(--color-primary);
+    color:var(--color-primary);
+}
+
+/* Floating Buttons */
+
+.whatsapp-btn,
+.call-btn{
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:fixed;
+    right:24px;
+    z-index:999;
+    box-shadow:var(--shadow-md);
+    transition:all var(--transition);
+}
+
+.whatsapp-btn{
+    bottom:95px;
+    background:#25D366;
+    color:#fff;
+}
+
+.call-btn{
+    bottom:24px;
+    background:var(--color-primary);
+    color:#fff;
+}
+
+.whatsapp-btn:hover,
+.call-btn:hover{
+    transform:scale(1.08);
+}
+
+/* Disabled */
+
+.btn[disabled],
+button:disabled{
+    opacity:.6;
+    cursor:not-allowed;
+    pointer-events:none;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    .btn,
+    .btn-primary,
+    .btn-secondary,
+    .nav-btn,
+    .plan-btn,
+    .service-btn{
+        width:100%;
+    }
+
+    .hero-buttons{
+        display:grid;
+        gap:1rem;
+    }
+}

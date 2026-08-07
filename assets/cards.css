@@ -1,0 +1,293 @@
+/* ==========================================================
+   PrimeTech Solutions
+   cards.css
+   Premium Card System v1.0
+   ========================================================== */
+
+/* ==========================================================
+   Base Card
+========================================================== */
+
+.card,
+.service-card,
+.plan-card,
+.contact-card,
+.business-box,
+.feature-box,
+.stat-card{
+    position:relative;
+    background:var(--glass-bg);
+    border:1px solid var(--glass-border);
+    backdrop-filter:blur(var(--glass-blur));
+    border-radius:var(--radius-lg);
+    padding:var(--card-padding);
+    overflow:hidden;
+    transition:all var(--transition);
+    box-shadow:var(--shadow-sm);
+}
+
+/* Glow Border */
+
+.card::before,
+.service-card::before,
+.plan-card::before,
+.contact-card::before,
+.business-box::before,
+.feature-box::before,
+.stat-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    padding:1px;
+
+    border-radius:inherit;
+
+    background:linear-gradient(
+        135deg,
+        rgba(255,138,0,.55),
+        rgba(255,255,255,.05)
+    );
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite:xor;
+            mask-composite:exclude;
+
+    pointer-events:none;
+}
+
+/* Hover */
+
+.card:hover,
+.service-card:hover,
+.plan-card:hover,
+.contact-card:hover,
+.business-box:hover,
+.feature-box:hover,
+.stat-card:hover{
+
+    transform:translateY(-10px);
+
+    background:var(--bg-card-hover);
+
+    box-shadow:var(--shadow-lg),
+               var(--shadow-glow);
+
+    border-color:rgba(255,138,0,.35);
+}
+
+/* ==========================================================
+   Card Headings
+========================================================== */
+
+.card h2,
+.service-card h2,
+.plan-card h2,
+.contact-card h2,
+.business-box h2,
+.feature-box h2{
+    margin-bottom:14px;
+}
+
+.card h3,
+.service-card h3,
+.plan-card h3,
+.contact-card h3{
+    color:var(--text);
+}
+
+/* ==========================================================
+   Icons
+========================================================== */
+
+.card i,
+.service-card i,
+.plan-card i,
+.contact-card i,
+.business-box i,
+.feature-box i{
+
+    width:var(--icon-size);
+
+    height:var(--icon-size);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:var(--gradient-primary);
+
+    color:#fff;
+
+    font-size:1.3rem;
+
+    margin-bottom:20px;
+
+    box-shadow:var(--shadow-glow);
+}
+
+/* ==========================================================
+   Lists
+========================================================== */
+
+.plan-card ul,
+.service-card ul{
+
+    margin-top:18px;
+}
+
+.plan-card li,
+.service-card li{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:.7rem;
+
+    margin-bottom:12px;
+
+    color:var(--text-muted);
+}
+
+.plan-card li i,
+.service-card li i{
+
+    width:auto;
+
+    height:auto;
+
+    background:none;
+
+    box-shadow:none;
+
+    margin:0;
+
+    color:var(--color-primary);
+
+    font-size:.95rem;
+}
+
+/* ==========================================================
+   Plan Badge
+========================================================== */
+
+.plan-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:6px 14px;
+
+    border-radius:999px;
+
+    background:rgba(255,138,0,.12);
+
+    color:var(--color-primary);
+
+    font-size:.78rem;
+
+    font-weight:700;
+
+    letter-spacing:.08em;
+
+    text-transform:uppercase;
+
+    margin-bottom:18px;
+}
+
+/* Featured Plan */
+
+.plan-card.featured{
+
+    transform:scale(1.04);
+
+    border-color:rgba(255,138,0,.45);
+
+    box-shadow:
+        var(--shadow-lg),
+        var(--shadow-glow);
+}
+
+.plan-card.featured:hover{
+
+    transform:scale(1.05)
+              translateY(-10px);
+}
+
+/* ==========================================================
+   Gallery Cards
+========================================================== */
+
+.gallery-grid img{
+
+    border-radius:var(--radius-md);
+
+    transition:all var(--transition);
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow-sm);
+}
+
+.gallery-grid img:hover{
+
+    transform:scale(1.03);
+
+    box-shadow:var(--shadow-lg);
+
+    border-color:var(--color-primary);
+}
+
+/* ==========================================================
+   Expert Card
+========================================================== */
+
+.expert-item{
+
+    display:flex;
+
+    gap:20px;
+
+    margin-bottom:24px;
+}
+
+/* ==========================================================
+   Mobile
+========================================================== */
+
+@media(max-width:768px){
+
+    .card,
+    .service-card,
+    .plan-card,
+    .contact-card,
+    .business-box{
+
+        padding:22px;
+    }
+
+    .plan-card.featured{
+
+        transform:none;
+    }
+
+    .plan-card.featured:hover{
+
+        transform:translateY(-8px);
+    }
+
+}
